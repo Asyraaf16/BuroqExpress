@@ -5,11 +5,13 @@
  */
 package com.mvc.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Employee {
+public class Employee implements Serializable{
     //Employee attribute
     private int emp_id;
     private String emp_name;
@@ -28,7 +30,7 @@ public class Employee {
         this.emp_phoneNum = emp_phoneNum;
         this.emp_username = emp_username;
         this.emp_password = emp_password;
-    }
+    } 
 
     public void setEmp_id(int emp_id) {
         this.emp_id = emp_id;
@@ -77,6 +79,4 @@ public class Employee {
     public String getEmp_password() {
         return emp_password;
     }
-    
-    
 }

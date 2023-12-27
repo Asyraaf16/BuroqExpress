@@ -23,7 +23,7 @@
     <body>
         <%@ include file="navbar.jsp" %>
         <div class="container mt-3">
-            <h1 class="text-center mt-3">Profile</h1>
+            <h1 class="text-center mt-3">Edit Profile</h1>
             <div class="d-flex justify-content-center">
                 <form class="row g-2 shadow p-2 mb-3 bg-white rounded" method ="POST">
 
@@ -53,7 +53,7 @@
                         <input type="text" class="form-control">
                     </div>
                     <div class="d-grid gap-2 col-3 mx-auto">
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>

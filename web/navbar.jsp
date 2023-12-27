@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="createOrder.jsp" class="nav-link">
                         <i class="fa-solid fa-pen"></i> 
                         <span class="link-text">Order</span>
                     </a>
