@@ -77,7 +77,7 @@
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <input class="btn btn-primary" type="submit" value="Sign in"></input>
                     </div>
-                    <p class="text-center">Not registered? <a href="#">Create an account</a></p>
+                    <p class="text-center">Not registered? <a href="register.jsp">Create an account</a></p>
                 </form>
             </div>
         </div>
