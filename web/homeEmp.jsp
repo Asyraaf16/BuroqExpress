@@ -1,6 +1,6 @@
 <%-- 
-    Document   : homeUser
-    Created on : Dec 27, 2023, 1:11:08 AM
+    Document   : homeEmp
+    Created on : Dec 28, 2023, 11:07:02 PM
     Author     : user
 --%>
 
@@ -34,6 +34,10 @@
                 height: auto;
             }
 
+            .grid-item h1 {
+                font-size: 2rem;
+            }
+
             .grid-item h4 {
                 margin-top: 10px;
             }
@@ -48,6 +52,8 @@
                 -webkit-box-shadow: 1px 3px 6px 1px rgba(0,0,0,0.89); 
                 box-shadow: 1px 3px 6px 1px rgba(0,0,0,0.89);
                 padding: 20px;
+                width: 200px; /* Set a fixed width */
+                height: 200px; /* Set a fixed height */
             }
 
             .grid-item-container:hover{
@@ -62,42 +68,37 @@
         </style>
     </head>
     <body>
-        <%@ include file="navbar.jsp" %>
+        <%@ include file="navbarEmp.jsp" %>
         <div>
-            <h1 class="text-center">Welcome to Buroq Express</h1>
+            <h1 class="text-center mb-3 mt-2">Welcome (Staff Name)</h1>
             <div class="d-flex justify-content-center">
                 <div class="grid-container">
                     <div class="grid-item">
-                        <a href="editProfile.jsp">
                             <div class="grid-item-container">
-                                <img src="Assets/editprofile.png" alt="editprofile">
+                                <h1>(12)</h1>
                             </div>
-                        </a>
-                        <h4>Edit Profile</h4>
+                        <h4>Order Placed</h4>
                     </div>
                     <div class="grid-item">
-                        <a href="createOrder.jsp">
                             <div class="grid-item-container">
-                                <img src="Assets/create.png" alt="Create Order">
+                                <h1>(12)</h1>
                             </div>
                         </a>
-                        <h4>Create Order</h4>
+                        <h4>Transit</h4>
                     </div>
                     <div class="grid-item">
-                        <a href="statusUser.jsp">
                             <div class="grid-item-container">
-                                <img src="Assets/status.png" alt="Status">
+                                <h1>(12)</h1>
                             </div>
                         </a>
-                        <h4>Status</h4>
+                        <h4>Completed</h4>
                     </div>
                     <div class="grid-item">
-                        <a href="shipRate.jsp">
                             <div class="grid-item-container">
-                                <img src="Assets/shiprate.png" alt="Shipping Rates">
+                                <h1>(12)</h1>
                             </div>
                         </a>
-                        <h4>Shipping Rates</h4>
+                        <h4>Reg. Customer</h4>
                     </div>
                 </div>
             </div>

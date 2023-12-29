@@ -56,7 +56,7 @@
         <div class="container">
             <!-- Logo Section -->
             <div class="logo-section">
-                <img style="width: 100%; height: auto;" src="Assets/logo.png" alt="company logo"/>
+                <img style="width: 100%; height: auto;" src='Assets/logo.png' alt="company logo"/>
             </div>
 
             <!-- Separator -->

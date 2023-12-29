@@ -1,6 +1,6 @@
 <%-- 
-    Document   : profile
-    Created on : Dec 27, 2023, 2:09:37 AM
+    Document   : editProfileEmp
+    Created on : Dec 29, 2023, 12:19:18 AM
     Author     : user
 --%>
 
@@ -24,7 +24,7 @@
         </style>
     </head>
     <body>
-        <%@ include file="navbar.jsp" %>
+        <%@ include file="navbarEmp.jsp" %>
         <div class="container mt-3">
             <h1 class="text-center mb-3 mt-2">Edit Profile</h1>
             <div class="d-flex justify-content-center">
@@ -50,7 +50,10 @@
                         <label for="inputPassword4" class="form-label">Password:</label>
                         <input type="password" class="form-control">
                     </div>
-
+                    <div class="col-md-2">
+                        <label for="inputEmail4" class="form-label">Branch ID:</label>
+                        <input type="text" readonly class="form-control" value="KTN">
+                    </div>
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Address:</label>
                         <input type="text" class="form-control">

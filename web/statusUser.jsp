@@ -18,15 +18,11 @@
                 font-family: Helvetica, sans-serif;
                 font-weight: 800;
             }
-            form{
-                background-color: #F6F4EB;
-            }
         </style>
     </head>
     <body>
         <%@ include file="navbar.jsp" %>
-        <div class="container mt-5">
-            <h1 class="text-center">STAFF LIST</h1>
+        <h1 class="text-center mb-3 mt-2">Parcel List</h1>
             <div class="d-flex justify-content-center">
                 <table class="table table-bordered border-black" >
                     <thead class="table-dark text-center">
@@ -38,17 +34,17 @@
                     </thead>
                     <tr>
                         <td>
-                            <input type="text" readonly class="form-control-plaintext text-center" id="id parcel" value="0192321">
+                            <input type="text" readonly class="form-control-plaintext text-center col-sm-3" id="id parcel" value="0192321">
                         </td>
                         <td>
-                            <input type="text" readonly class="form-control-plaintext text-center" id="status parcel" value="#####">
+                            <input type="text" readonly class="form-control-plaintext text-center col-sm-3" id="status parcel" value="#####">
                         </td>    
-                        <td class="text-center align-middle">
-                            <a class="btn btn-outline-success" href="invoice.jsp" title="Delete Record">Invoice</a>
+                        <td class="text-center align-middle col-sm-3">
+                            <a class="btn btn-outline-success" href="#" title="Parcel Info">Invoice</a>
+                            <a class="btn btn-outline-danger" href="#" title="Parcel Info">Delete</a>
                         </td>
                     </tr>
                 </table>
             </div>
-        </div>
     </body>
 </html>

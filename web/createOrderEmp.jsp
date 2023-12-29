@@ -1,6 +1,6 @@
 <%-- 
-    Document   : createOrder
-    Created on : Dec 27, 2023, 9:57:56 AM
+    Document   : createOrderEmp
+    Created on : Dec 29, 2023, 8:11:26 AM
     Author     : user
 --%>
 
@@ -29,7 +29,7 @@
         </style>
     </head>
     <body>
-        <%@ include file="navbar.jsp" %>
+        <%@ include file="navbarEmp.jsp" %>
         <h1 class="text-center mb-3 mt-2">Create Order</h1>
         <div class="container-sm d-flex justify-content-center">
             <form class="row g-2 shadow p-2 mb-3 rounded" method ="POST">
@@ -87,7 +87,7 @@
                             <label class="form-label">Shipping Fee </label><br>
                             <div class="input-group">           
                                 <span class="input-group-text">RM</span>
-                                <input type="text" class="form-control" placeholder="Destination's Postcode">
+                                <input type="text" class="form-control">
                             </div>
                         </div>                        
                     </div>
@@ -99,3 +99,4 @@
         </div>
     </body>
 </html>
+
