@@ -50,9 +50,23 @@
                 margin: 0 20px;
             }
         </style>
+        <script>
+            // Check if loginSuccess is true, then display a success message
+            var logoutSuccess = <%= Boolean.TRUE.equals(request.getAttribute("logoutSuccess"))%>;
+            if (logoutSuccess) {
+                window.onload = function () {
+                    alert("Logout Successful");
+                };
+            }
+            var registerSuccess = <%= Boolean.TRUE.equals(request.getAttribute("registerSuccess")) %>
+            if(registerSuccess){
+                window.onload = function(){
+                    alert("Register Successful");
+                };
+            }
+        </script>
     </head>
     <body>
-
         <div class="container">
             <!-- Logo Section -->
             <div class="logo-section">
@@ -65,14 +79,14 @@
             <!-- Login Form Section -->
             <div class="form-section">
                 <h1 class="text-center">Log In</h1><br>
-                <form>
+                <form action="LoginServletCust" method ="POST">
                     <div class="mb-3">
                         <label for="username" class="form-label">Email</label>
-                        <input type="text" class="form-control" placeholder="Enter your email address">
+                        <input type="text" class="form-control" name="email" placeholder="Enter your email address" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your password">
+                        <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <input class="btn btn-primary" type="submit" value="Sign in"></input>
@@ -81,6 +95,5 @@
                 </form>
             </div>
         </div>
-
     </body>
 </html>

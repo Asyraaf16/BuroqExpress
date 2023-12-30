@@ -120,7 +120,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="login.jsp" class="nav-link">
+                    <a href="LogoutServlet" class="nav-link">
                         <i class="fa-solid fa-right-from-bracket"></i> 
                         <span class="link-text">Log out</span>
                     </a>

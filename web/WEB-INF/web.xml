@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoginServletCust</servlet-name>
+        <servlet-class>com.mvc.controller.LoginServletCust</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServletCust</servlet-name>
+        <servlet-class>com.mvc.controller.RegisterServletCust</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServletCust</servlet-name>
+        <url-pattern>/LoginServletCust</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServletCust</servlet-name>
+        <url-pattern>/RegisterServletCust</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
