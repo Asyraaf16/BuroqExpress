@@ -70,7 +70,7 @@
     <body>
 
         <div class="container mt-5">
-
+            <a class="btn btn-outline-success" href="login.jsp" title="Back">Back</a>
             <h1 class="text-center">Account Registeration</h1><br>
             <form class="row g-2 shadow p-2 mb-3 bg-white rounded" onsubmit="return validateForm()" action="RegisterServletCust" method ="POST">
 

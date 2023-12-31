@@ -86,9 +86,9 @@
         </style>
     </head>
     <body>
+
         <nav class="navbar">
             <ul class="navbar-nav">
-
                 <li class="nav-item">
                     <a href="editProfile.jsp" class="nav-link">
                         <i class="fa-solid fa-circle-user"></i>

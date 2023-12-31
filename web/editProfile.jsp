@@ -3,7 +3,9 @@
     Created on : Dec 27, 2023, 2:09:37 AM
     Author     : user
 --%>
-
+<%@ page language="java" import="java.sql.*" %>
+<%@page import="com.mvc.dao.CustomerDAO"%>
+<%@page import="com.mvc.bean.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,43 +24,54 @@
                 background-color: #F6F4EB;
             }
         </style>
+        <script>
+            // Check if loginSuccess is true, then display a success message
+            var updateSuccess = <%= Boolean.TRUE.equals(request.getAttribute("updateSuccess"))%>;
+            if (loginSuccess) {
+                window.onload = function () {
+                    alert("Update successful");
+                };
+            }
+        </script>
     </head>
     <body>
         <%@ include file="navbar.jsp" %>
         <div class="container mt-3">
             <h1 class="text-center mb-3 mt-2">Edit Profile</h1>
             <div class="d-flex justify-content-center">
-                <form class="row g-2 shadow p-2 mb-3 rounded" method ="POST">
+                <form class="row g-2 shadow p-2 mb-3 rounded" action="CustController" method ="POST">
 
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Username:</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" value="">
                     </div>
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Full Name:</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" value="">
                     </div>
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Phone Number:</label>
-                        <input type="email" class="form-control" placeholder="Exp: 012-3456789">
+                        <input type="email" class="form-control" placeholder="Exp: 012-3456789" value="">
                     </div>
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Email:</label>
-                        <input type="email" readonly class="form-control" value="mohdasyraaf@gmail.com">
+                        <input type="email" readonly class="form-control" value="">
                     </div>
                     <div class="col-md-5">
                         <label for="inputPassword4" class="form-label">Password:</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" value="">
                     </div>
 
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Address:</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="">
                     </div>
                     <div class="d-grid gap-2 col-3 mx-auto">
+                        <input type="hidden" name="operation" value="UPDT" />
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </body>

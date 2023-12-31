@@ -8,6 +8,10 @@
         <servlet-name>RegisterServletCust</servlet-name>
         <servlet-class>com.mvc.controller.RegisterServletCust</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CustController</servlet-name>
+        <servlet-class>com.mvc.controller.CustController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletCust</servlet-name>
         <url-pattern>/LoginServletCust</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>RegisterServletCust</servlet-name>
         <url-pattern>/RegisterServletCust</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustController</servlet-name>
+        <url-pattern>/CustController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
