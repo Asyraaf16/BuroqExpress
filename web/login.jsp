@@ -58,9 +58,9 @@
                     alert("Logout Successful");
                 };
             }
-            var registerSuccess = <%= Boolean.TRUE.equals(request.getAttribute("registerSuccess")) %>
-            if(registerSuccess){
-                window.onload = function(){
+            var registerSuccess = <%= Boolean.TRUE.equals(request.getAttribute("registerSuccess"))%>
+            if (registerSuccess) {
+                window.onload = function () {
                     alert("Register Successful");
                 };
             }
@@ -75,7 +75,7 @@
 
             <!-- Separator -->
             <div class="separator"></div>
-
+            
             <!-- Login Form Section -->
             <div class="form-section">
                 <h1 class="text-center">Log In</h1><br>

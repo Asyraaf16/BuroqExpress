@@ -64,6 +64,8 @@
 
             <!-- Login Form Section -->
             <div class="form-section">
+                <a class="btn btn-primary" href="login.jsp" role="button">Customer</a>
+                <a class="btn btn-primary" href="loginEmp.jsp" role="button">Employee</a>
                 <h1 class="text-center">Staff Log In</h1><br>
                 <form>
                     <div class="mb-3">

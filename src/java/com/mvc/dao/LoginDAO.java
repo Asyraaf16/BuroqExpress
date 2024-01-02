@@ -19,8 +19,8 @@ public class LoginDAO {
 
     public LoginDAO() {
     }
-    
-     public Connection con = DBConnection.createConnection();
+
+    public Connection con = DBConnection.createConnection();
 
     public String authenticateCust(Customer loginCust) {
         String email = loginCust.getCust_email();
@@ -45,5 +45,29 @@ public class LoginDAO {
             e.printStackTrace();
         }
         return "Invalid user credentials";
+    }
+
+    public int access(String email, String pass) {
+
+        Connection con = null;
+        Statement stmt = null;
+        
+        try {
+            con = DBConnection.createConnection();
+            stmt = con.createStatement();
+            String sql;
+            sql = "select * from customer where cust_email = '" + email
+                    + "'and cust_password = '" + pass + "'";
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+            int id = rs.getInt("cust_id");
+            con.close();
+            return id;           
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -52,19 +52,42 @@ public class CustomerDAO {
         }
     }
 
-    public Customer getCust(int cust_id) {
+    public Customer getCust(String cust_email) {
         try {
-            String sql = "select * from customer where cust_id = " + cust_id;
+            String sql = "select * from customer where cust_email = '" + cust_email + "'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             rs.next();
+            int id = rs.getInt("cust_id");
             String username = rs.getString("cust_username");
             String passw = rs.getString("cust_password");
             String name = rs.getString("cust_name");
             String pnum = rs.getString("cust_phoneNum");
             String address = rs.getString("cust_adddress");
-            String email = rs.getString("cust_email");
-            Customer cust = new Customer(cust_id, username, passw, name, pnum, address, email);
+            Customer cust = new Customer(id, username, passw, name, pnum, address, cust_email);
+            con.close();
+            return cust;
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+    
+        public Customer getCustData(String cust_email,String password) {
+        try {
+            String sql = "select * from customer where cust_email = '" + cust_email
+                    + "'and cust_password = '" + password + "'";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+            int id = rs.getInt("cust_id");
+            String username = rs.getString("cust_username");
+            String passw = rs.getString("cust_password");
+            String name = rs.getString("cust_name");
+            String pnum = rs.getString("cust_phoneNum");
+            String address = rs.getString("cust_adddress");
+            Customer cust = new Customer(id, username, passw, name, pnum, address, cust_email);
             con.close();
             return cust;
             

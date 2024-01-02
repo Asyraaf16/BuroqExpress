@@ -3,7 +3,19 @@
     Created on : Dec 27, 2023, 1:11:08 AM
     Author     : user
 --%>
+<%
+    // Get the cust_id attribute from the session
+    Object custIdObject = session.getAttribute("cust_id");
 
+    // Check if cust_id is null or not an instance of Integer
+    if (custIdObject == null || !(custIdObject instanceof Integer)) {
+        request.setAttribute("errMessage", "You have not logged in");
+        out.println("<script> location.href='login.jsp';</script>");
+    } else {
+        // Convert custIdObject to int
+        int custId = (Integer) custIdObject;
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

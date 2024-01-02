@@ -87,7 +87,7 @@
                             <label class="form-label">Shipping Fee </label><br>
                             <div class="input-group">           
                                 <span class="input-group-text">RM</span>
-                                <input type="text" class="form-control" placeholder="Destination's Postcode">
+                                <input type="text" class="form-control">
                             </div>
                         </div>                        
                     </div>

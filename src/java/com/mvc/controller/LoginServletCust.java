@@ -88,12 +88,16 @@ public class LoginServletCust extends HttpServlet {
         LoginDAO loginDao = new LoginDAO();//creating object for loginDao
         //Calling authenticateCust function
         String userValidate = loginDao.authenticateCust(loginCust);
+
         //if function returns success string the user will redirect to homeUser.jsp
         if (userValidate.equals("SUCCESS")) {
+            int id = loginDao.access(email, password);
             HttpSession session = request.getSession();//register session
+            session.setAttribute("cust_id", id);
             session.setAttribute("email", email);//to set the attribute to the session
             //RequestDispacther is used to redirect to homeUser.jsp page
             // Inside your Servlet after successful login
+            
             request.setAttribute("loginSuccess", true);
             RequestDispatcher rd = request.getRequestDispatcher("homeUser.jsp");
             rd.forward(request, response);

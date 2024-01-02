@@ -3,7 +3,24 @@
     Created on : Dec 27, 2023, 2:09:37 AM
     Author     : user
 --%>
-<%@ page language="java" import="java.sql.*" %>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="util.DBConnection"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+    // Get the cust_id attribute from the session
+    Object custIdObject = session.getAttribute("cust_id");
+
+    // Check if cust_id is null or not an instance of Integer
+    if (custIdObject == null || !(custIdObject instanceof Integer)) {
+        request.setAttribute("errMessage", "You have not logged in");
+        out.println("<script> location.href='login.jsp';</script>");
+    }
+        // Convert custIdObject to int
+      int  cust_id = (Integer) custIdObject;
+    
+%>
+
 <%@page import="com.mvc.dao.CustomerDAO"%>
 <%@page import="com.mvc.bean.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,7 +44,7 @@
         <script>
             // Check if loginSuccess is true, then display a success message
             var updateSuccess = <%= Boolean.TRUE.equals(request.getAttribute("updateSuccess"))%>;
-            if (loginSuccess) {
+            if (updateSuccess) {
                 window.onload = function () {
                     alert("Update successful");
                 };
@@ -35,44 +52,53 @@
         </script>
     </head>
     <body>
+        <%
+            Connection conn = DBConnection.createConnection();
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * from customer where cust_id = '" + cust_id + "'" ;
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+        %>
         <%@ include file="navbar.jsp" %>
         <div class="container mt-3">
             <h1 class="text-center mb-3 mt-2">Edit Profile</h1>
             <div class="d-flex justify-content-center">
                 <form class="row g-2 shadow p-2 mb-3 rounded" action="CustController" method ="POST">
-
+                    <div class="col-md-1">
+                        <label for="inputEmail4" class="form-label">ID:</label>
+                        <input type="text" class="form-control" name="cust_id" value="<%= rs.getInt("cust_id") %>" readonly>
+                    </div>
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Username:</label>
-                        <input type="email" class="form-control" value="">
+                        <input type="text" class="form-control" name="cust_username" value="<%= rs.getString("cust_username") %>">
                     </div>
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Full Name:</label>
-                        <input type="email" class="form-control" value="">
+                        <input type="text" class="form-control" name="cust_name" value="<%= rs.getString("cust_name") %>">
                     </div>
                     <div class="col-md-2">
                         <label for="inputEmail4" class="form-label">Phone Number:</label>
-                        <input type="email" class="form-control" placeholder="Exp: 012-3456789" value="">
+                        <input type="text" class="form-control" name= "cust_phoneNum" placeholder="Exp: 012-3456789" value="<%= rs.getString("cust_phoneNum") %>">
                     </div>
                     <div class="col-md-5">
                         <label for="inputEmail4" class="form-label">Email:</label>
-                        <input type="email" readonly class="form-control" value="">
+                        <input type="email" class="form-control" name="cust_email" value="<%= rs.getString("cust_email")%>" readonly>
                     </div>
                     <div class="col-md-5">
                         <label for="inputPassword4" class="form-label">Password:</label>
-                        <input type="password" class="form-control" value="">
+                        <input type="password" class="form-control" name="cust_password" value="<%= rs.getString("cust_password") %>" readonly>
                     </div>
-
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Address:</label>
-                        <input type="text" class="form-control" value="">
+                        <input type="text" class="form-control" name="cust_address" value="<%= rs.getString("cust_address") %>">
                     </div>
                     <div class="d-grid gap-2 col-3 mx-auto">
                         <input type="hidden" name="operation" value="UPDT" />
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
-
             </div>
         </div>
-    </body>
+    </c:set>
+</body>
 </html>
